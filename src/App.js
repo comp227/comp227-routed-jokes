@@ -15,7 +15,7 @@ const Menu = () => {
 
 const JokeList = ({ jokes }) => (
   <div>
-    <h2>jokes</h2>
+    <h2>the list</h2>
     <ul>
       {jokes.map(joke => <li key={joke.id} >{joke.content}</li>)}
     </ul>
@@ -24,19 +24,19 @@ const JokeList = ({ jokes }) => (
 
 const About = () => (
   <div>
-    <h2>About jokes app</h2>
+    <h2>About our jokes and memes app</h2>
     <p>We all need a good laugh here or there</p>
 
     <em>Software engineering can lead you to the highest of highs and the lowest of lows.  So it is good to commiserate with your programming community on the good the bad and the ugly.</em>
 
-    <p>Software engineering is full of jokes both good and cring, so with this app you can see what's out there and add more.</p>
+    <p>Software engineering is full of jokes both good and cring, so with this app you can see some funny pictures and add more.</p>
   </div>
 )
 
 const Footer = () => (
   <div>
     <hr/>
-    Joke app for <a href='https://comp227.djosv.com/'>COMP 227</a>.
+    Joke/Meme app for <a href='https://comp227.djosv.com/'>COMP 227</a>.
   </div>
 )
 
@@ -58,7 +58,7 @@ const CreateNew = (props) => {
 
   return (
     <div>
-      <h2>create a new joke</h2>
+      <h2>create a new joke/meme</h2>
       <form onSubmit={handleSubmit}>
         <div>
           content
@@ -120,7 +120,7 @@ const App = () => {
 
   return (
     <div>
-      <h1>Software jokes</h1>
+      <h1>Programming jokes and memes</h1>
       <Menu />
       <JokeList jokes={jokes} />
       <About />
