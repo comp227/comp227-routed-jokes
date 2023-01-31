@@ -6,41 +6,36 @@ const Menu = () => {
   }
   return (
     <div>
-      <a href='#' style={padding}>anecdotes</a>
+      <a href='#' style={padding}>jokes</a>
       <a href='#' style={padding}>create new</a>
       <a href='#' style={padding}>about</a>
     </div>
   )
 }
 
-const AnecdoteList = ({ anecdotes }) => (
+const JokeList = ({ jokes }) => (
   <div>
-    <h2>Anecdotes</h2>
+    <h2>jokes</h2>
     <ul>
-      {anecdotes.map(anecdote => <li key={anecdote.id} >{anecdote.content}</li>)}
+      {jokes.map(joke => <li key={joke.id} >{joke.content}</li>)}
     </ul>
   </div>
 )
 
 const About = () => (
   <div>
-    <h2>About anecdote app</h2>
-    <p>According to Wikipedia:</p>
+    <h2>About jokes app</h2>
+    <p>We all need a good laugh here or there</p>
 
-    <em>An anecdote is a brief, revealing account of an individual person or an incident.
-      Occasionally humorous, anecdotes differ from jokes because their primary purpose is not simply to provoke laughter but to reveal a truth more general than the brief tale itself,
-      such as to characterize a person by delineating a specific quirk or trait, to communicate an abstract idea about a person, place, or thing through the concrete details of a short narrative.
-      An anecdote is "a story with a point."</em>
+    <em>Software engineering can lead you to the highest of highs and the lowest of lows.  So it is good to commiserate with your programming community on the good the bad and the ugly.</em>
 
-    <p>Software engineering is full of excellent anecdotes, at this app you can find the best and add more.</p>
+    <p>Software engineering is full of jokes both good and cring, so with this app you can see what's out there and add more.</p>
   </div>
 )
 
 const Footer = () => (
   <div>
-    Anecdote app for <a href='https://fullstackopen.com/'>Full Stack Open</a>.
-
-    See <a href='https://github.com/fullstack-hy2020/routed-anecdotes/blob/master/src/App.js'>https://github.com/fullstack-hy2020/routed-anecdotes/blob/master/src/App.js</a> for the source code.
+    Joke app for <a href='https://comp227.djosv.com/'>COMP 227</a>.
   </div>
 )
 
@@ -62,7 +57,7 @@ const CreateNew = (props) => {
 
   return (
     <div>
-      <h2>create a new anecdote</h2>
+      <h2>create a new joke</h2>
       <form onSubmit={handleSubmit}>
         <div>
           content
@@ -84,18 +79,18 @@ const CreateNew = (props) => {
 }
 
 const App = () => {
-  const [anecdotes, setAnecdotes] = useState([
+  const [jokes, setJokes] = useState([
     {
-      content: 'If it hurts, do it more often',
-      author: 'Jez Humble',
-      info: 'https://martinfowler.com/bliki/FrequencyReducesDifficulty.html',
+      content: 'Why do most java programmers wear glasses? Because they dont see sharp',
+      author: 'Powercat',
+      info: 'https://dribbble.com/shots/3153009-Why-do-Java-developers-wear-glasses',
       votes: 0,
       id: 1
     },
     {
-      content: 'Premature optimization is the root of all evil',
-      author: 'Donald Knuth',
-      info: 'http://wiki.c2.com/?PrematureOptimization',
+      content: 'Why did the programmer quit his job? Because he didnt get arrays',
+      author: 'Microsoft',
+      info: 'https://www.cnet.com/culture/microsoft-tweets-joke-about-raises/',
       votes: 0,
       id: 2
     }
@@ -103,30 +98,30 @@ const App = () => {
 
   const [notification, setNotification] = useState('')
 
-  const addNew = (anecdote) => {
+  const addNew = (joke) => {
     anecdote.id = Math.round(Math.random() * 10000)
-    setAnecdotes(anecdotes.concat(anecdote))
+    setJokes(jokes.concat(anecdote))
   }
 
-  const anecdoteById = (id) =>
-    anecdotes.find(a => a.id === id)
+  const jokeById = (id) =>
+    jokes.find(j => j.id === id)
 
   const vote = (id) => {
-    const anecdote = anecdoteById(id)
+    const joke = jokeById(id)
 
     const voted = {
-      ...anecdote,
-      votes: anecdote.votes + 1
+      ...joke,
+      votes: joke.votes + 1
     }
 
-    setAnecdotes(anecdotes.map(a => a.id === id ? voted : a))
+    setJokes(jokes.map(j => j.id === id ? voted : j))
   }
 
   return (
     <div>
-      <h1>Software anecdotes</h1>
+      <h1>Software jokes</h1>
       <Menu />
-      <AnecdoteList anecdotes={anecdotes} />
+      <JokeList jokes={jokes} />
       <About />
       <CreateNew addNew={addNew} />
       <Footer />
