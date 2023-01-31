@@ -82,16 +82,16 @@ const CreateNew = (props) => {
 const App = () => {
   const [jokes, setJokes] = useState([
     {
-      content: 'Why do most java programmers wear glasses? Because they dont see sharp',
-      author: 'Powercat',
-      info: 'https://dribbble.com/shots/3153009-Why-do-Java-developers-wear-glasses',
+      content: 'I do computer science. Can you fix my laptop?',
+      author: 'Starecat',
+      info: 'https://starecat.com/content/wp-content/uploads/i-do-computer-science-can-you-fix-my-laptop-leonardo-dicaprio-inception.jpg',
       votes: 0,
       id: 1
     },
     {
-      content: 'Why did the programmer quit his job? Because he didnt get arrays',
-      author: 'Microsoft',
-      info: 'https://www.cnet.com/culture/microsoft-tweets-joke-about-raises/',
+      content: 'My Code is working! Let me refactor it',
+      author: 'Allprogramminghelp on pinterest',
+      info: 'https://i.pinimg.com/736x/38/aa/14/38aa14d825159addd99190a76aeda417.jpg',
       votes: 0,
       id: 2
     }
