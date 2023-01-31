@@ -99,8 +99,8 @@ const App = () => {
   const [notification, setNotification] = useState('')
 
   const addNew = (joke) => {
-    anecdote.id = Math.round(Math.random() * 10000)
-    setJokes(jokes.concat(anecdote))
+    joke.id = Math.round(Math.random() * 10000)
+    setJokes(jokes.concat(joke))
   }
 
   const jokeById = (id) =>
