@@ -61,15 +61,15 @@ const CreateNew = (props) => {
       <h2>create a new joke/meme</h2>
       <form onSubmit={handleSubmit}>
         <div>
-          content
+          joke content/description
           <input name='content' value={content} onChange={(e) => setContent(e.target.value)} />
         </div>
         <div>
-          author
+          acknowledge/source
           <input name='author' value={author} onChange={(e) => setAuthor(e.target.value)} />
         </div>
         <div>
-          url for more info
+          image url
           <input name='info' value={info} onChange={(e)=> setInfo(e.target.value)} />
         </div>
         <button>create</button>
