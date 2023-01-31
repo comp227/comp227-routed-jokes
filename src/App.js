@@ -35,6 +35,7 @@ const About = () => (
 
 const Footer = () => (
   <div>
+    <hr/>
     Joke app for <a href='https://comp227.djosv.com/'>COMP 227</a>.
   </div>
 )
