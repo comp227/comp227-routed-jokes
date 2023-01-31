@@ -65,12 +65,12 @@ const CreateNew = (props) => {
           <input name='content' value={content} onChange={(e) => setContent(e.target.value)} />
         </div>
         <div>
-          acknowledge/source
-          <input name='author' value={author} onChange={(e) => setAuthor(e.target.value)} />
-        </div>
-        <div>
           image url
           <input name='info' value={info} onChange={(e)=> setInfo(e.target.value)} />
+        </div>
+        <div>
+          acknowledge/source
+          <input name='author' value={author} onChange={(e) => setAuthor(e.target.value)} />
         </div>
         <button>create</button>
       </form>
